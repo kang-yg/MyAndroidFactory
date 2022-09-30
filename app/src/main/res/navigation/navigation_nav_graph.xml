@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_fragmentNavigation_to_fragmentNavigationSub"
             app:destination="@id/fragmentNavigationSub" />
+        <action
+            android:id="@+id/action_fragmentNavigation_to_fragmentNavigationDialog"
+            app:destination="@id/fragmentNavigationDialog" />
     </fragment>
 
     <fragment
@@ -23,4 +26,10 @@
             android:name="text"
             app:argType="string" />
     </fragment>
+
+    <dialog
+        android:id="@+id/fragmentNavigationDialog"
+        android:name="com.example.studyandroid.FragmentNavigationDialog"
+        android:label="FragmentNavigationDialog"
+        tools:layout="@layout/fragment_navigation_dialog" />
 </navigation>
