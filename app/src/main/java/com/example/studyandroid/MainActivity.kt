@@ -2,11 +2,13 @@ package com.example.studyandroid
 
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import androidx.fragment.app.FragmentContainerView
-import com.example.studyandroid.databinding.ActivityMainBinding
+
+typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
