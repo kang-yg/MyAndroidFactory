@@ -6,7 +6,7 @@
     app:startDestination="@id/fragmentNavigation">
     <fragment
         android:id="@+id/fragmentNavigation"
-        android:name="com.example.studyandroid.FragmentNavigation"
+        android:name="com.example.studyandroid.view.FragmentNavigation"
         android:label="FragmentNavigation"
         tools:layout="@layout/fragment_navigation">
         <action
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragmentNavigationSub"
-        android:name="com.example.studyandroid.FragmentNavigationSub"
+        android:name="com.example.studyandroid.view.FragmentNavigationSub"
         android:label="FragmentNavigationSub"
         tools:layout="@layout/fragment_navigation_sub">
         <argument
@@ -29,7 +29,7 @@
 
     <dialog
         android:id="@+id/fragmentNavigationDialog"
-        android:name="com.example.studyandroid.FragmentNavigationDialog"
+        android:name="com.example.studyandroid.view.FragmentNavigationDialog"
         android:label="FragmentNavigationDialog"
         tools:layout="@layout/fragment_navigation_dialog" />
 </navigation>

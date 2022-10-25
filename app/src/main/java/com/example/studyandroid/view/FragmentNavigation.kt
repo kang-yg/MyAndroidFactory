@@ -1,10 +1,11 @@
-package com.example.studyandroid
+package com.example.studyandroid.view
 
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.example.studyandroid.R
 import com.example.studyandroid.Util.getStatusBarHeight
 import com.example.studyandroid.databinding.FragmentNavigationBinding
 

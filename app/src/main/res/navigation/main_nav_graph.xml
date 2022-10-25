@@ -5,21 +5,23 @@
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/fragmentMain">
 
-    <action android:id="@+id/action_global_fragmentMotionLayout" app:destination="@id/fragmentMotionLayout"/>
+    <include app:graph="@navigation/navigation_nav_graph" />
 
-    <include app:graph="@navigation/navigation_nav_graph"/>
+    <include app:graph="@navigation/navigation_motionlayout_graph" />
 
     <fragment
         android:id="@+id/fragmentMain"
-        android:name="com.example.studyandroid.FragmentMain"
+        android:name="com.example.studyandroid.view.FragmentMain"
         android:label="FragmentMain"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_fragmentMain_to_fragmentCoordinatorLayout"
             app:destination="@id/fragmentCoordinatorLayout" />
+
         <action
-            android:id="@+id/action_fragmentMain_to_fragmentMotionLayout"
-            app:destination="@id/fragmentMotionLayout" />
+            android:id="@+id/action_fragmentMain_to_navigation_motionlayout_graph"
+            app:destination="@id/navigation_motionlayout_graph" />
+
         <action
             android:id="@+id/action_fragmentMain_to_fragmentNavigation"
             app:destination="@id/nestedFragmentNavigation" />
@@ -27,13 +29,7 @@
 
     <fragment
         android:id="@+id/fragmentCoordinatorLayout"
-        android:name="com.example.studyandroid.FragmentCoordinatorLayout"
+        android:name="com.example.studyandroid.view.FragmentCoordinatorLayout"
         android:label="FragmentCoordinatorLayout"
         tools:layout="@layout/fragment_coordinatorlayout" />
-
-    <fragment
-        android:id="@+id/fragmentMotionLayout"
-        android:name="com.example.studyandroid.FragmentMotionLayout"
-        android:label="FragmentMotionLayout"
-        tools:layout="@layout/fragment_motionlayout" />
 </navigation>

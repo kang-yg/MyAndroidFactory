@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_motionlayout_graph"
+    app:startDestination="@id/fragmentMotionLayout">
+
+    <fragment
+        android:id="@+id/fragmentMotionLayout"
+        android:name="com.example.studyandroid.view.MotionLayout.FragmentMotionLayout"
+        android:label="FragmentMotionLayout"
+        tools:layout="@layout/fragment_motionlayout">
+        <action
+            android:id="@+id/action_fragmentMotionLayout_to_fragmentMotionLayoutDetail"
+            app:destination="@id/fragmentMotionLayoutDetail"
+            app:enterAnim="@anim/slide_out_up"
+            app:exitAnim="@anim/slide_in_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentMotionLayoutDetail"
+        android:name="com.example.studyandroid.view.MotionLayout.FragmentMotionLayoutDetail"
+        android:label="FragmentMotionLayoutDetail"
+        tools:layout="@layout/fragment_motionlayout_detail">
+        <argument
+            android:name="motionLayoutRecyclerViewItem"
+            app:argType="com.example.studyandroid.view.MotionLayout.FragmentMotionLayoutRecyclerViewItem" />
+    </fragment>
+</navigation>

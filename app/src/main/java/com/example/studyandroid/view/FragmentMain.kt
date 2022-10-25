@@ -1,9 +1,10 @@
-package com.example.studyandroid
+package com.example.studyandroid.view
 
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.example.studyandroid.R
 import com.example.studyandroid.Util.getStatusBarHeight
 import com.example.studyandroid.databinding.FragmentMainBinding
 
@@ -29,7 +30,7 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             }
 
             it.btGoFragmentMotionLayout.setOnClickListener {
-                navController.navigate(R.id.action_fragmentMain_to_fragmentMotionLayout)
+                navController.navigate(R.id.action_fragmentMain_to_navigation_motionlayout_graph)
             }
 
             it.btGoFragmentNavigation.setOnClickListener {

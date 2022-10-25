@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ivThumbnail"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="W, 9:16"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@+id/tvTitle"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ivThumbnail"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:alpha="1"
+            app:layout_constraintBottom_toTopOf="@id/glThumbnailBottom"
+            app:layout_constraintDimensionRatio="W, 9:16"
+            app:layout_constraintEnd_toStartOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="@id/glThumbnailStart"
+            app:layout_constraintTop_toBottomOf="@id/glThumbnailTop" />
+
+        <Constraint
+            android:id="@+id/tvTitle"
+            android:alpha="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:paddingTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/glThumbnailEnd"
+            app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+            app:layout_constraintTop_toBottomOf="@id/top" />
+    </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="1000"
+        motion:motionInterpolator="linear" />
+</MotionScene>
