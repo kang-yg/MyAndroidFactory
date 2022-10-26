@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentNavigation"
             app:destination="@id/nestedFragmentNavigation" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentWorkManager"
+            app:destination="@id/fragmentWorkManager" />
     </fragment>
 
     <fragment
@@ -32,4 +35,10 @@
         android:name="com.example.studyandroid.view.FragmentCoordinatorLayout"
         android:label="FragmentCoordinatorLayout"
         tools:layout="@layout/fragment_coordinatorlayout" />
+
+    <fragment
+        android:id="@+id/fragmentWorkManager"
+        android:name="com.example.studyandroid.view.workmanager.FragmentWorkManager"
+        android:label="FragmentWorkManager"
+        tools:layout="@layout/fragment_workmanager"/>
 </navigation>
