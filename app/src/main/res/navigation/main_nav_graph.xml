@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentWorkManager"
             app:destination="@id/fragmentWorkManager" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentCustomView"
+            app:destination="@id/fragmentCustomView" />
     </fragment>
 
     <fragment
@@ -40,5 +43,11 @@
         android:id="@+id/fragmentWorkManager"
         android:name="com.example.studyandroid.view.workmanager.FragmentWorkManager"
         android:label="FragmentWorkManager"
-        tools:layout="@layout/fragment_workmanager"/>
+        tools:layout="@layout/fragment_workmanager" />
+
+    <fragment
+        android:id="@+id/fragmentCustomView"
+        android:name="com.example.studyandroid.view.CustomView.FragmentCustomView"
+        android:label="FragmentCustomView"
+        tools:layout="@layout/fragment_customview" />
 </navigation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleBorderTextView">
+        <attr name="borderColor" format="reference|color" />
+        <attr name="thickness" format="dimension" />
+        <attr name="android:background" />
+        <attr name="android:text" />
+    </declare-styleable>
+</resources>
