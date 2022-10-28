@@ -7,7 +7,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
 import com.example.studyandroid.R
 import com.example.studyandroid.Util.dpToPx
 
@@ -29,6 +28,9 @@ class CircleBorderTextView : LinearLayout {
         getAttrs(attrs, defStyle)
     }
 
+    fun setText(text: String) {
+        textView.text = text
+    }
 
     private fun initView() {
         val inflaterService = Context.LAYOUT_INFLATER_SERVICE

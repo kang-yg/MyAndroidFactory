@@ -13,6 +13,10 @@ class FragmentCustomView : BaseFragment<FragmentCustomviewBinding>(FragmentCusto
         binding?.let {
             // StatusBar 높이만큼 패딩 적용.
             it.llFragmentCustomView.setPadding(0, requireActivity().getStatusBarHeight(), 0, requireActivity().getStatusBarHeight())
+
+            it.ctv.setOnClickListener { view ->
+                (view as CircleBorderTextView).setText("Hello")
+            }
         }
     }
 }

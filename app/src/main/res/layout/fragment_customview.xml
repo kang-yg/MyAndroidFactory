@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <com.example.studyandroid.view.CustomView.CircleBorderTextView
+        android:id="@+id/ctv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/circle_border_textview_background"
