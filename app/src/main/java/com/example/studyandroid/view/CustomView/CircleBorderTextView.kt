@@ -62,7 +62,7 @@ class CircleBorderTextView : LinearLayout {
             background?.let {
                 this.background = (it as GradientDrawable).apply {
                     mutate()
-                    setStroke(context.dpToPx(borderThickness), context.getColor(borderColor))
+                    setStroke(borderThickness, context.getColor(borderColor))
                 }
             }
 

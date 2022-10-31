@@ -13,5 +13,13 @@
         android:background="@drawable/circle_border_textview_background"
         android:text="Apple"
         app:borderColor="@color/Aqua"
-        app:thickness="1dp" />
+        app:thickness="10dp" />
+
+    <com.example.studyandroid.view.CustomView.GraduallyFillBorderTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Orange"
+        app:gfb_progress="0"
+        app:gfb_borderColor="@color/Orange"
+        app:gfb_thickness="10dp" />
 </LinearLayout>

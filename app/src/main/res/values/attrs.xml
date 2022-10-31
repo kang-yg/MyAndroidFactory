@@ -6,4 +6,12 @@
         <attr name="android:background" />
         <attr name="android:text" />
     </declare-styleable>
+
+    <declare-styleable name="GraduallyFillBorderTextView">
+        <attr name="gfb_progress" format="integer" />
+        <attr name="gfb_borderColor" format="reference|color" />
+        <attr name="gfb_thickness" format="dimension" />
+        <attr name="android:text" />
+        <attr name="android:textColor" />
+    </declare-styleable>
 </resources>
