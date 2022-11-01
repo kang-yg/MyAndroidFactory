@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Paint
-import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
@@ -12,6 +11,9 @@ import com.example.studyandroid.R
 import com.example.studyandroid.Util.dpToPx
 
 class GraduallyFillBorderTextView : View {
+    private val defaultMargin: Float = 10f
+    var myWidth: Int = 0
+    var myHeight: Int = 0
     var progress: Int = 0
         get() = field
         set(value) {
@@ -44,6 +46,8 @@ class GraduallyFillBorderTextView : View {
     }
 
     private fun setTypeArray(typedArray: TypedArray) {
+        myWidth = typedArray.getDimension(R.styleable.GraduallyFillBorderTextView_android_layout_width, 310f).toInt()
+        myHeight = typedArray.getDimension(R.styleable.GraduallyFillBorderTextView_android_layout_height, 310f).toInt()
         progress = typedArray.getInt(R.styleable.GraduallyFillBorderTextView_gfb_progress, 0)
         textColorId = typedArray.getResourceId(R.styleable.GraduallyFillBorderTextView_android_textColor, 0)
         borderColorId = typedArray.getResourceId(R.styleable.GraduallyFillBorderTextView_gfb_borderColor, 0)
@@ -54,14 +58,14 @@ class GraduallyFillBorderTextView : View {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-
+        val circleWith = defaultMargin + myWidth - borderThickness
+        val circleHeight = defaultMargin + myHeight - borderThickness
         val textPaint = Paint().apply {
             color = context.getColor(textColorId)
             style = Paint.Style.FILL
             textSize = context.dpToPx(18).toFloat()
             textAlign = Paint.Align.CENTER
         }
-
         val borderPaint = Paint().apply {
             color = context.getColor(borderColorId)
             style = Paint.Style.STROKE
@@ -71,10 +75,14 @@ class GraduallyFillBorderTextView : View {
         with(canvas) {
             progress.let {
                 if (progress <= 100) {
-                    val bounds = Rect()
-                    textPaint.getTextBounds(progress.toString(), 0, progress.toString().length, bounds)
-                    this@with?.drawArc(RectF(10f, 10f, 300f, 300f), -90f, (360 * progress / 100).toFloat(), false, borderPaint)
-                    this@with?.drawText(progress.toString(), 155f, 165f, textPaint)
+                    this@with?.drawArc(
+                        RectF(defaultMargin, defaultMargin, circleWith, circleHeight),
+                        -90f,
+                        (360 * progress / 100).toFloat(),
+                        false,
+                        borderPaint
+                    )
+                    this@with?.drawText(progress.toString(), circleWith / 2, circleHeight / 2, textPaint)
                     if (progress != 100) invalidate()
                 }
             }
