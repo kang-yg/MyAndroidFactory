@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_compose_graph"
+    app:startDestination="@id/fragmentCompose">
+
+    <fragment
+        android:id="@+id/fragmentCompose"
+        android:name="com.example.studyandroid.view.Compose.FragmentCompose"
+        android:label="FragmentCompose">
+        <action
+            android:id="@+id/action_fragmentCompose_to_fragmentComposeSecond"
+            app:destination="@id/fragmentComposeSecond" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentComposeSecond"
+        android:name="com.example.studyandroid.view.Compose.FragmentComposeSecond"
+        android:label="FragmentComposeSecond" />
+</navigation>

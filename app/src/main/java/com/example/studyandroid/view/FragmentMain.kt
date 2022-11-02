@@ -44,6 +44,10 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             it.btGoFragmentCustomView.setOnClickListener {
                 navController.navigate(R.id.action_fragmentMain_to_fragmentCustomView)
             }
+
+            it.btGoFragmentCompose.setOnClickListener {
+                navController.navigate(R.id.action_fragmentMain_to_fragmentCompose)
+            }
         }
     }
 }

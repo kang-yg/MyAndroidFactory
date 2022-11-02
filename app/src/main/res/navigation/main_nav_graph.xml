@@ -9,6 +9,8 @@
 
     <include app:graph="@navigation/navigation_motionlayout_graph" />
 
+    <include app:graph="@navigation/navigation_compose_graph" />
+
     <fragment
         android:id="@+id/fragmentMain"
         android:name="com.example.studyandroid.view.FragmentMain"
@@ -25,12 +27,18 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentNavigation"
             app:destination="@id/nestedFragmentNavigation" />
+
         <action
             android:id="@+id/action_fragmentMain_to_fragmentWorkManager"
             app:destination="@id/fragmentWorkManager" />
+
         <action
             android:id="@+id/action_fragmentMain_to_fragmentCustomView"
             app:destination="@id/fragmentCustomView" />
+
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentCompose"
+            app:destination="@id/navigation_compose_graph" />
     </fragment>
 
     <fragment
