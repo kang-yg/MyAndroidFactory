@@ -16,5 +16,14 @@
     <fragment
         android:id="@+id/fragmentComposeSecond"
         android:name="com.example.studyandroid.view.Compose.FragmentComposeSecond"
-        android:label="FragmentComposeSecond" />
+        android:label="FragmentComposeSecond">
+        <action
+            android:id="@+id/action_fragmentComposeSecond_to_fragmentComposeThird"
+            app:destination="@id/fragmentComposeThird" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentComposeThird"
+        android:name="com.example.studyandroid.view.Compose.FragmentComposeThird"
+        android:label="FragmentComposeThird" />
 </navigation>

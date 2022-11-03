@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.example.studyandroid.R
 import com.example.studyandroid.Util.getStatusBarHeight
 
 @ExperimentalUnitApi
@@ -49,8 +49,8 @@ class FragmentComposeSecond : Fragment() {
     fun Second() {
         Scaffold(
             content = { innerPadding ->
-                Column() {
-                    Text(text = "Second", modifier = Modifier.padding(innerPadding))
+                Column(modifier = Modifier.padding(innerPadding)) {
+                    Text(text = "Second")
                     UserList(userList = getUserList())
                 }
             }
@@ -72,12 +72,10 @@ class FragmentComposeSecond : Fragment() {
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    Toast
-                        .makeText(context, userInfo.password, Toast.LENGTH_SHORT)
-                        .show()
+                    navController.navigate(R.id.action_fragmentComposeSecond_to_fragmentComposeThird)
                 }
         ) {
-            Text(text = userInfo.id, fontSize = TextUnit(value = 14f, type = TextUnitType.Sp))
+            Text(text = userInfo.id, fontSize = TextUnit(value = 14f, type = TextUnitType.Sp), modifier = Modifier.padding(10.dp))
         }
     }
 

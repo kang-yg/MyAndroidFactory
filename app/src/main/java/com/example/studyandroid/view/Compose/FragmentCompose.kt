@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -59,10 +58,7 @@ class FragmentCompose : Fragment() {
             LogoImage()
             SignInFields(id = id, onIdChange = { id = it }, password = password, onPasswordChange = { password = it })
             ButtonDoSignIn {
-                if (id.isNotEmpty() && password.isNotEmpty())
-                    navController.navigate(R.id.action_fragmentCompose_to_fragmentComposeSecond)
-                else
-                    Toast.makeText(context, "TextField is empty.", Toast.LENGTH_SHORT).show()
+                navController.navigate(R.id.action_fragmentCompose_to_fragmentComposeSecond)
             }
         }
     }
