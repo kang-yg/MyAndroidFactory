@@ -18,22 +18,19 @@ import androidx.navigation.fragment.findNavController
 import com.example.studyandroid.Util.getStatusBarHeight
 
 @ExperimentalMaterial3Api
-class FragmentComposeThird : Fragment() {
-    private lateinit var navController: NavController
-
+class FragmentComposeSideEffect : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        navController = findNavController()
         return ComposeView(requireContext()).apply {
             setContent {
                 setPadding(0, requireActivity().getStatusBarHeight(), 0, requireActivity().getStatusBarHeight())
 
-                Third()
+                TestSideEffect()
             }
         }
     }
 
     @Composable
-    fun Third() {
+    fun TestSideEffect() {
         // LaunchedEffect는 Composable에서 컴포지션이 일어날 때 suspend fun 을 실행해 주는 Composable이다.
         // LaunchedEffect는 key 가 바뀔 때만 LaunchedEffect의 suspend fun 을 취소하고 재실행한다.
         var textForLaunchedEffect by rememberSaveable { mutableStateOf("") }
@@ -48,7 +45,6 @@ class FragmentComposeThird : Fragment() {
                 Column(modifier = Modifier.padding(innerPadding)) {
                     Text(text = "ComposeSideEffect")
                     TestLaunchedEffect(textForLaunchedEffect) { textForLaunchedEffect = it }
-                    TestRememberCoroutineScope()
                 }
             },
             snackbarHost = {
@@ -64,14 +60,5 @@ class FragmentComposeThird : Fragment() {
             value = textForLaunchedEffect, onValueChange = onTextForLaunchedEffectChange, label = { Text(text = "LaunchedEffect") },
             modifier = Modifier.fillMaxWidth()
         )
-    }
-
-    @Composable
-    fun TestRememberCoroutineScope() {
-        Button(onClick = {
-            navController.popBackStack()
-        }) {
-            Text(text = "Back")
-        }
     }
 }

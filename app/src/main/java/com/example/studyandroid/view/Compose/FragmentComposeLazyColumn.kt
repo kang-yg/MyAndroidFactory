@@ -30,27 +30,24 @@ import com.example.studyandroid.Util.getStatusBarHeight
 
 @ExperimentalUnitApi
 @ExperimentalMaterial3Api
-class FragmentComposeSecond : Fragment() {
-    private lateinit var navController: NavController
-
+class FragmentComposeLazyColumn : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        navController = findNavController()
         return ComposeView(requireContext()).apply {
             setContent {
                 setPadding(0, requireActivity().getStatusBarHeight(), 0, requireActivity().getStatusBarHeight())
 
-                Second()
+                TestLazyColumn()
             }
         }
     }
 
     @Preview
     @Composable
-    fun Second() {
+    fun TestLazyColumn() {
         Scaffold(
             content = { innerPadding ->
                 Column(modifier = Modifier.padding(innerPadding)) {
-                    Text(text = "Second")
+                    Text(text = "TestLazyColumn")
                     UserList(userList = getUserList())
                 }
             }
@@ -72,7 +69,7 @@ class FragmentComposeSecond : Fragment() {
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    navController.navigate(R.id.action_fragmentComposeSecond_to_fragmentComposeThird)
+
                 }
         ) {
             Text(text = userInfo.id, fontSize = TextUnit(value = 14f, type = TextUnitType.Sp), modifier = Modifier.padding(10.dp))

@@ -9,21 +9,29 @@
         android:name="com.example.studyandroid.view.Compose.FragmentCompose"
         android:label="FragmentCompose">
         <action
-            android:id="@+id/action_fragmentCompose_to_fragmentComposeSecond"
-            app:destination="@id/fragmentComposeSecond" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragmentComposeSecond"
-        android:name="com.example.studyandroid.view.Compose.FragmentComposeSecond"
-        android:label="FragmentComposeSecond">
+            android:id="@+id/action_fragmentCompose_to_fragmentComposeSignIn"
+            app:destination="@id/fragmentComposeSignIn" />
         <action
-            android:id="@+id/action_fragmentComposeSecond_to_fragmentComposeThird"
-            app:destination="@id/fragmentComposeThird" />
+            android:id="@+id/action_fragmentCompose_to_fragmentComposeLazyColumn"
+            app:destination="@id/fragmentComposeLazyColumn" />
+        <action
+            android:id="@+id/action_fragmentCompose_to_fragmentComposeSideEffect"
+            app:destination="@id/fragmentComposeSideEffect" />
     </fragment>
 
     <fragment
-        android:id="@+id/fragmentComposeThird"
-        android:name="com.example.studyandroid.view.Compose.FragmentComposeThird"
-        android:label="FragmentComposeThird" />
+        android:id="@+id/fragmentComposeSignIn"
+        android:name="com.example.studyandroid.view.Compose.FragmentComposeSignIn"
+        android:label="FragmentComposeSignIn"></fragment>
+
+    <fragment
+        android:id="@+id/fragmentComposeLazyColumn"
+        android:name="com.example.studyandroid.view.Compose.FragmentComposeLazyColumn"
+        android:label="FragmentComposeLazyColumn"></fragment>
+
+    <fragment
+        android:id="@+id/fragmentComposeSideEffect"
+        android:name="com.example.studyandroid.view.Compose.FragmentComposeSideEffect"
+        android:label="FragmentComposeSideEffect" />
+
 </navigation>
