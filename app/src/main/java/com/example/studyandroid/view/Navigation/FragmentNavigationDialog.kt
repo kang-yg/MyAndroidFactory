@@ -1,10 +1,11 @@
-package com.example.studyandroid.view
+package com.example.studyandroid.view.Navigation
 
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.studyandroid.databinding.FragmentNavigationDialogBinding
+import com.example.studyandroid.view.BaseDialogFragment
 
 class FragmentNavigationDialog : BaseDialogFragment<FragmentNavigationDialogBinding>(FragmentNavigationDialogBinding::inflate) {
     private lateinit var navController: NavController

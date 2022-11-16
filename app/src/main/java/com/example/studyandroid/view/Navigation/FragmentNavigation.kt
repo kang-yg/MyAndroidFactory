@@ -1,4 +1,4 @@
-package com.example.studyandroid.view
+package com.example.studyandroid.view.Navigation
 
 import android.os.Bundle
 import android.view.View
@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.studyandroid.R
 import com.example.studyandroid.Util.getStatusBarHeight
 import com.example.studyandroid.databinding.FragmentNavigationBinding
+import com.example.studyandroid.view.BaseFragment
 
 class FragmentNavigation : BaseFragment<FragmentNavigationBinding>(FragmentNavigationBinding::inflate) {
     private lateinit var navController: NavController
