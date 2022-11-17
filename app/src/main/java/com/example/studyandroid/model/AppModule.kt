@@ -15,8 +15,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+/*    // MotionLayout URL
     @Provides
-    fun provideBaseUrl() = Constants.BASE_URL
+    fun provideBaseUrl() = Constants.BASE_URL*/
+
+    @Provides
+    fun provideBaseUrl() = Constants.LOREM_BASE_URL
 
     @Singleton
     @Provides
