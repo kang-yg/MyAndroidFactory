@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(private val remoteServiceHelper: RemoteServiceHelper) {
     suspend fun getHeroes() = remoteServiceHelper.getHeroes()
-    suspend fun getLoremImages(limit: Int): Flow<PagingData<LoremImageInfo>> {
+    fun getLoremImages(limit: Int): Flow<PagingData<LoremImageInfo>> {
         return Pager(
             config = PagingConfig(pageSize = limit, enablePlaceholders = false),
             pagingSourceFactory = { LoremPicsumDataSource(remoteServiceHelper, limit) }

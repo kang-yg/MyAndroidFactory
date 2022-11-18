@@ -58,4 +58,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btGoFragmentCustomView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btGoFragmentPaging"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Paging"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btGoFragmentCompose" />
 </androidx.constraintlayout.widget.ConstraintLayout>

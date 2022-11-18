@@ -48,6 +48,10 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             it.btGoFragmentCompose.setOnClickListener {
                 navController.navigate(R.id.action_fragmentMain_to_fragmentCompose)
             }
+
+            it.btGoFragmentPaging.setOnClickListener {
+                navController.navigate(R.id.action_fragmentMain_to_fragmentPaging)
+            }
         }
     }
 }

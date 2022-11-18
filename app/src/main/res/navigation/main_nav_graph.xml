@@ -39,11 +39,15 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentCompose"
             app:destination="@id/navigation_compose_graph" />
+
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentPaging"
+            app:destination="@id/fragmentPaging" />
     </fragment>
 
     <fragment
         android:id="@+id/fragmentCoordinatorLayout"
-        android:name="com.example.studyandroid.view.FragmentCoordinatorLayout"
+        android:name="com.example.studyandroid.view.CoordinatorLayout.FragmentCoordinatorLayout"
         android:label="FragmentCoordinatorLayout"
         tools:layout="@layout/fragment_coordinatorlayout" />
 
@@ -58,4 +62,10 @@
         android:name="com.example.studyandroid.view.CustomView.FragmentCustomView"
         android:label="FragmentCustomView"
         tools:layout="@layout/fragment_customview" />
+
+    <fragment
+        android:id="@+id/fragmentPaging"
+        android:name="com.example.studyandroid.view.Paging.FragmentPaging"
+        android:label="FragmentPaging"
+        tools:layout="@layout/fragment_paging" />
 </navigation>

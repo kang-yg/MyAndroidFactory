@@ -19,11 +19,15 @@ class LoremPicsumDataSource(private val remoteServiceHelper: RemoteServiceHelper
             var result: Response<List<LoremImageInfo>>? = null
             result = remoteServiceHelper.getLoremImages(pageIndex, limit)
             result?.let {
-                LoadResult.Page(
-                    data = if (it.isSuccessful) it.body() else null,
-                    prevKey = if (pageIndex == 1) null else pageIndex - 1,
-                    nextKey = if (it.body().isEmpty()) null else pageIndex + 1
-                )
+                if (it.isSuccessful) {
+                    LoadResult.Page(
+                        data = if (it.isSuccessful && it.body() != null) it.body()!!.toList() else listOf<LoremImageInfo>(),
+                        prevKey = if (pageIndex == 1) null else pageIndex - 1,
+                        nextKey = if (it.body() == null) null else if (it.body()!!.isEmpty()) null else pageIndex + 1
+                    )
+                } else {
+                    throw IllegalStateException()
+                }
             }
         } catch (e: Exception) {
             LoadResult.Error(e)
