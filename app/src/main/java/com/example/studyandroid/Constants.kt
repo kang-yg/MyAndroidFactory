@@ -1,5 +1,9 @@
 package com.example.studyandroid
 
+import android.Manifest
+import android.os.Build
+import android.os.Build.VERSION_CODES.Q
+
 object Constants {
     const val BASE_URL = "https://run.mocky.io"
     const val LOREM_BASE_URL = "https://picsum.photos"
@@ -8,4 +12,8 @@ object Constants {
     const val NOTIFICATION_NOTIFICATION_ID = 999
     const val NOTIFICATION_TITLE = "Notification title"
     const val NOTIFICATION_BODY = "Notification body"
+
+    private val lessThanQ = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+    private val higherQ = arrayOf(Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO)
+    val requiredPermissions = if (Build.VERSION.SDK_INT < Q) lessThanQ else higherQ
 }

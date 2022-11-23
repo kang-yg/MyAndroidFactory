@@ -43,6 +43,10 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentPaging"
             app:destination="@id/fragmentPaging" />
+
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentStorage"
+            app:destination="@id/fragmentStorage" />
     </fragment>
 
     <fragment
@@ -68,4 +72,10 @@
         android:name="com.example.studyandroid.view.Paging.FragmentPaging"
         android:label="FragmentPaging"
         tools:layout="@layout/fragment_paging" />
+
+    <fragment
+        android:id="@+id/fragmentStorage"
+        android:name="com.example.studyandroid.view.storage.FragmentStorage"
+        android:label="FragmentStorage"
+        tools:layout="@layout/fragment_storage"/>
 </navigation>
