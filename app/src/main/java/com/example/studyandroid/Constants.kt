@@ -3,6 +3,7 @@ package com.example.studyandroid
 import android.Manifest
 import android.os.Build
 import android.os.Build.VERSION_CODES.Q
+import android.os.Build.VERSION_CODES.TIRAMISU
 
 object Constants {
     const val BASE_URL = "https://run.mocky.io"
@@ -14,6 +15,7 @@ object Constants {
     const val NOTIFICATION_BODY = "Notification body"
 
     private val lessThanQ = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    private val higherQ = arrayOf(Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO)
-    val requiredPermissions = if (Build.VERSION.SDK_INT < Q) lessThanQ else higherQ
+    private val higherThanQ = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+    private val higherThanTIRAMISU = arrayOf(Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO)
+    val requiredPermissions = if (Build.VERSION.SDK_INT >= TIRAMISU) higherThanTIRAMISU else if (Build.VERSION.SDK_INT >= Q) higherThanQ else lessThanQ
 }
