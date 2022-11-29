@@ -25,7 +25,9 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflate: Inflate<VB>) 
         _binding = null
     }
 
-    fun requestPermissionLauncher() = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
-        Log.d("AA", "requestPermissionLauncher")
+    fun requestPermissionLauncher() = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+        permissions.forEach {
+            Log.d("Permission: ", "${it.key} is ${it.value}")
+        }
     }
 }
