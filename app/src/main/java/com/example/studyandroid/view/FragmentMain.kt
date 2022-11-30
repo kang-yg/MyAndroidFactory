@@ -56,6 +56,10 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             it.btGoFragmentStorage.setOnClickListener {
                 navController.navigate(R.id.action_fragmentMain_to_fragmentStorage)
             }
+
+            it.btGoFragmentDataStore.setOnClickListener {
+                navController.navigate(R.id.action_fragmentMain_to_fragmentDataStore)
+            }
         }
     }
 }

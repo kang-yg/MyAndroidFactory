@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clFragmentDataStore"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvPreferenceDataStoreMyNumberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preference DataStore MyNumber"
+        app:layout_constraintBottom_toTopOf="@id/tvPreferenceDataStoreMyNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tvPreferenceDataStoreMyNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvPreferenceDataStoreMyNumberTitle"
+        app:layout_constraintStart_toStartOf="@id/tvPreferenceDataStoreMyNumberTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvPreferenceDataStoreMyNumberTitle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btIncreaseMyNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IncreaseMyNumber"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@id/tvPreferenceDataStoreMyNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvPreferenceDataStoreMyNumber"
+        app:layout_constraintTop_toTopOf="@id/tvPreferenceDataStoreMyNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
