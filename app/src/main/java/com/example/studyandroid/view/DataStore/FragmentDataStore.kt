@@ -3,6 +3,7 @@ package com.example.studyandroid.view.DataStore
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.example.studyandroid.R
 import com.example.studyandroid.Util.dpToPx
 import com.example.studyandroid.Util.getStatusBarHeight
 import com.example.studyandroid.databinding.FragmentDatastoreBinding
@@ -25,6 +26,14 @@ class FragmentDataStore : BaseFragment<FragmentDatastoreBinding>(FragmentDatasto
 
             it.btIncreaseMyNumber.setOnClickListener {
                 fragmentDataStoreViewModel.increaseMyNumber()
+            }
+
+            fragmentDataStoreViewModel.myPersonLiveData.observe(viewLifecycleOwner) { myPersonProto ->
+                it.tvProtoDataStoreMyPersonInfo.text = String.format(getString(R.string.fragment_datastore_myperson), myPersonProto.name, myPersonProto.age)
+            }
+
+            it.btChangeMyPerson.setOnClickListener {
+                fragmentDataStoreViewModel.updateMyPerson()
             }
         }
     }

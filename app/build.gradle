@@ -5,6 +5,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.google.protobuf' version '0.8.17'
 }
 
 android {
@@ -100,9 +101,24 @@ dependencies {
     // Shimmer
     implementation "com.facebook.shimmer:shimmer:0.5.0"
 
-    // DataStore
     // DataStore - Preference
     implementation("androidx.datastore:datastore-preferences:1.1.0-alpha01")
     // DataStore - Proto
     implementation("androidx.datastore:datastore:1.1.0-alpha01")
+    implementation("com.google.protobuf:protobuf-javalite:3.14.0")
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.14.0"
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
 }
