@@ -9,19 +9,20 @@
         android:id="@+id/tvPreferenceDataStoreMyNumberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:text="Preference DataStore MyNumber"
         app:layout_constraintBottom_toTopOf="@id/tvPreferenceDataStoreMyNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:layout_marginBottom="20dp"/>
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/tvPreferenceDataStoreMyNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/tvProtoDataStoreMyPersonTitle"
         app:layout_constraintEnd_toEndOf="@id/tvPreferenceDataStoreMyNumberTitle"
         app:layout_constraintStart_toStartOf="@id/tvPreferenceDataStoreMyNumberTitle"
         app:layout_constraintTop_toBottomOf="@id/tvPreferenceDataStoreMyNumberTitle" />
@@ -37,4 +38,34 @@
         app:layout_constraintStart_toEndOf="@id/tvPreferenceDataStoreMyNumber"
         app:layout_constraintTop_toTopOf="@id/tvPreferenceDataStoreMyNumber" />
 
+    <TextView
+        android:id="@+id/tvProtoDataStoreMyPersonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Proto DataStore MyPerson"
+        app:layout_constraintBottom_toTopOf="@id/tvProtoDataStoreMyPersonInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPreferenceDataStoreMyNumber" />
+
+    <TextView
+        android:id="@+id/tvProtoDataStoreMyPersonInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvProtoDataStoreMyPersonTitle"
+        app:layout_constraintStart_toStartOf="@id/tvProtoDataStoreMyPersonTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvProtoDataStoreMyPersonTitle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btChangeMyPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change MyPerson"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@id/tvProtoDataStoreMyPersonInfo"
+        app:layout_constraintStart_toStartOf="@id/tvProtoDataStoreMyPersonInfo"
+        app:layout_constraintTop_toBottomOf="@id/tvProtoDataStoreMyPersonInfo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
