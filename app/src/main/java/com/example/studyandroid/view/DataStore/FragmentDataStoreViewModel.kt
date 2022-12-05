@@ -25,18 +25,14 @@ class FragmentDataStoreViewModel @Inject constructor(private val repository: Rep
 
     fun increaseMyNumber() {
         viewModelScope.launch {
-            CoroutineScope(Dispatchers.IO).launch {
-                repository.getMyDataStore().writePreferenceDataStoreMyNumber()
-                readMyNumber()
-            }
+            repository.getMyDataStore().writePreferenceDataStoreMyNumber()
+            readMyNumber()
         }
     }
 
     private fun readMyNumber() {
         viewModelScope.launch {
-            CoroutineScope(Dispatchers.IO).launch {
-                _myNumberLiveData.postValue(repository.getMyDataStore().readPreferenceDataStoreMyNumber().first())
-            }
+            _myNumberLiveData.postValue(repository.getMyDataStore().readPreferenceDataStoreMyNumber().first())
         }
     }
 
@@ -44,18 +40,14 @@ class FragmentDataStoreViewModel @Inject constructor(private val repository: Rep
         val name = getRandomName()
         val age: Int = Random.nextInt(0, 99)
         viewModelScope.launch {
-            CoroutineScope(Dispatchers.IO).launch {
-                repository.getMyDataStore().writeProtoDataStore(name, age)
-                readMyPerson()
-            }
+            repository.getMyDataStore().writeProtoDataStore(name, age)
+            readMyPerson()
         }
     }
 
     private fun readMyPerson() {
         viewModelScope.launch {
-            CoroutineScope(Dispatchers.IO).launch {
-                _myPersonLiveData.postValue(repository.getMyDataStore().readProtoDataStoreMyPerson().first())
-            }
+            _myPersonLiveData.postValue(repository.getMyDataStore().readProtoDataStoreMyPerson().first())
         }
     }
 
