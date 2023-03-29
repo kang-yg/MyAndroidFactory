@@ -17,12 +17,7 @@ class FragmentHandlerThread :
 
         binding?.let {
             // StatusBar 높이만큼 패딩 적용.
-            it.clFragmentHandlerThread.setPadding(
-                0,
-                requireActivity().getStatusBarHeight(),
-                0,
-                requireActivity().getStatusBarHeight()
-            )
+            it.clFragmentHandlerThread.setPadding(0, requireActivity().getStatusBarHeight(), 0, requireActivity().getStatusBarHeight())
 
             val myHandlerThread = HandlerThread("MyHandlerThread").also { it.start() }
             val myHandler = MyHandler(myHandlerThread)
