@@ -60,6 +60,10 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             it.btGoFragmentDataStore.setOnClickListener {
                 navController.navigate(R.id.action_fragmentMain_to_fragmentDataStore)
             }
+
+            it.btGoFragmentHandlerThread.setOnClickListener {
+                navController.navigate(R.id.action_fragmentMain_to_fragmentHandlerThread)
+            }
         }
     }
 }

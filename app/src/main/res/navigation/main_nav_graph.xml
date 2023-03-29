@@ -51,6 +51,10 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentDataStore"
             app:destination="@id/fragmentDataStore" />
+
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentHandlerThread"
+            app:destination="@id/fragmentHandlerThread" />
     </fragment>
 
     <fragment
@@ -88,4 +92,10 @@
         android:name="com.example.studyandroid.view.DataStore.FragmentDataStore"
         android:label="FragmentDataStore"
         tools:layout="@layout/fragment_datastore"/>
+
+    <fragment
+        android:id="@+id/fragmentHandlerThread"
+        android:name="com.example.studyandroid.view.HandlerThread.FragmentHandlerThread"
+        android:label="FragmentHandlerThread"
+        tools:layout="@layout/fragment_handlerthread"/>
 </navigation>
