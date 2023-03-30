@@ -19,11 +19,19 @@ class FragmentHandlerThread :
             // StatusBar 높이만큼 패딩 적용.
             it.clFragmentHandlerThread.setPadding(0, requireActivity().getStatusBarHeight(), 0, requireActivity().getStatusBarHeight())
 
-            val myHandlerThread = HandlerThread("MyHandlerThread").also { it.start() }
-            val myHandler = MyHandler(myHandlerThread)
-            myHandler.sendMessage(Message.obtain().apply {
+            // 방법 1
+            val myHandlerThread1 = HandlerThread("MyHandlerThread1").also { it.start() }
+            val myHandler1 = MyHandler(myHandlerThread1)
+            myHandler1.sendMessage(Message.obtain().apply {
                 data = Bundle().also { bundle -> bundle.putString("text", "Hello World!") }
             })
+
+            // 방법 2
+            val myHandlerThread2 = HandlerThread("MyHandlerThread2").also { it.start() }
+            val myHandler2 = Handler(myHandlerThread2.looper)
+            myHandler2.post {
+                Log.d("HandlerThread", "Here is not main thread.")
+            }
         }
     }
 
