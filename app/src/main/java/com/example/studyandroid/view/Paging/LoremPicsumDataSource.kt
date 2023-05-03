@@ -18,7 +18,7 @@ class LoremPicsumDataSource(private val remoteServiceHelper: RemoteServiceHelper
             val pageIndex = params.key ?: 1
             var result: Response<List<LoremImageInfo>>? = null
             result = remoteServiceHelper.getLoremImages(pageIndex, limit)
-            result?.let {
+            result.let {
                 if (it.isSuccessful) {
                     LoadResult.Page(
                         data = if (it.isSuccessful && it.body() != null) it.body()!!.toList() else listOf<LoremImageInfo>(),
