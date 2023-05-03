@@ -9,10 +9,11 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import com.example.studyandroid.Constants
+import com.example.studyandroid.Constants.storagePermissions
 import com.example.studyandroid.R
 import com.example.studyandroid.Util.dpToPx
 import com.example.studyandroid.Util.getStatusBarHeight
+import com.example.studyandroid.Util.requestPermissionLauncher
 import com.example.studyandroid.databinding.FragmentStorageBinding
 import com.example.studyandroid.view.BaseFragment
 import java.io.FileOutputStream
@@ -21,8 +22,7 @@ class FragmentStorage : BaseFragment<FragmentStorageBinding>(FragmentStorageBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
+        requestPermissionLauncher(fragment = this)?.launch(storagePermissions)
         binding?.let {
             // StatusBar 높이만큼 패딩 적용.
             it.clFragmentStorage.setPadding(0, requireActivity().getStatusBarHeight(), 0, requireActivity().dpToPx(8))
@@ -33,9 +33,6 @@ class FragmentStorage : BaseFragment<FragmentStorageBinding>(FragmentStorageBind
     }
 
     private fun initBtMediaStore(binding: FragmentStorageBinding) {
-        // MediaStore Android SDK level에 따른 Permission request
-        requestPermissionLauncher().launch(Constants.requiredPermissions)
-
         val contentResolver = requireActivity().contentResolver
         binding.btMediaStore.setOnClickListener {
             if (Build.VERSION.SDK_INT < Q) {
