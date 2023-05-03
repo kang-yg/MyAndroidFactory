@@ -1,24 +1,17 @@
 package com.example.studyandroid.view
 
 import android.os.Build
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import com.example.studyandroid.R
+import com.example.studyandroid.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 
-typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+    override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
+    override fun initView() {
         setStatusBarTransparent()
     }
 
