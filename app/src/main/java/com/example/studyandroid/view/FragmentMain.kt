@@ -64,6 +64,10 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             it.btGoFragmentHandlerThread.setOnClickListener {
                 navController.navigate(R.id.action_fragmentMain_to_fragmentHandlerThread)
             }
+
+            it.btGoFragmentCamera.setOnClickListener {
+                navController.navigate(R.id.action_fragmentMain_to_activityCamera)
+            }
         }
     }
 }

@@ -55,6 +55,10 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentHandlerThread"
             app:destination="@id/fragmentHandlerThread" />
+        
+        <action
+            android:id="@+id/action_fragmentMain_to_activityCamera"
+            app:destination="@id/activityCamera" />
     </fragment>
 
     <fragment
@@ -98,4 +102,10 @@
         android:name="com.example.studyandroid.view.HandlerThread.FragmentHandlerThread"
         android:label="FragmentHandlerThread"
         tools:layout="@layout/fragment_handlerthread"/>
+
+    <activity
+        android:id="@+id/activityCamera"
+        android:name="com.example.studyandroid.view.Camera.ActivityCamera"
+        android:label="ActivityCamera"
+        tools:layout="@layout/activity_camera"/>
 </navigation>
