@@ -43,10 +43,7 @@ object Util {
     }
 
     fun checkPermission(activity: Activity, permissions: Array<String>): Boolean {
-        if (permissions.all { permission -> activity.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED }) {
-            return true
-        }
-        return false
+        return permissions.all { permission -> activity.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED }
     }
 
     private fun handlePermissionRequestResult(activity: ComponentActivity, permissions: Map<String, Boolean>) {
