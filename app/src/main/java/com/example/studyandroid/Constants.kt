@@ -14,7 +14,7 @@ object Constants {
     const val NOTIFICATION_TITLE = "Notification title"
     const val NOTIFICATION_BODY = "Notification body"
 
-    private val cameraPermissionArray = arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_EXTERNAL_STORAGE)
+    private val cameraPermissionArray = arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
     private val lessThanQ = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
     private val higherThanQ = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
     private val higherThanTIRAMISU = arrayOf(Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO)

@@ -27,9 +27,7 @@ class ActivityCamera : BaseActivity<ActivityCameraBinding>() {
 
     override fun onResume() {
         super.onResume()
-
         if (checkPermission(this, cameraPermissions)) myCamera?.startCamera()
-
     }
 
     private fun ActivityCameraBinding.initBtTakePhoto() {
