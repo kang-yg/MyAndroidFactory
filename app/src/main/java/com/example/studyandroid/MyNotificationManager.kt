@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
+import android.os.Build.VERSION_CODES.S
 import androidx.core.app.NotificationCompat
 import com.example.studyandroid.view.MainActivity
 
@@ -37,7 +38,12 @@ class MyNotificationManager(
             action = Intent.ACTION_MAIN
             addCategory(Intent.CATEGORY_LAUNCHER)
         }
-        val notificationPendingIntent = PendingIntent.getActivity(context, notificationID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val notificationPendingIntent =
+            if (Build.VERSION.SDK_INT >= S) {
+                PendingIntent.getActivity(context, notificationID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+            } else {
+                PendingIntent.getActivity(context, notificationID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+            }
 
         val notificationBuilder = NotificationCompat.Builder(context, channelID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
