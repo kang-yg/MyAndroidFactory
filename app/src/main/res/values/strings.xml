@@ -1,5 +1,3 @@
 <resources>
-    <string name="app_name">StudyAndroid</string>
-
-    <string name="fragment_datastore_myperson">이름: %s / 나이: %d</string>
+    <string name="app_name">MyAndroidFactory</string>
 </resources>
