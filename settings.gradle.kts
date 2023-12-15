@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyAndroidFactory"
 include(":app")
- 
+include(":my-module")
